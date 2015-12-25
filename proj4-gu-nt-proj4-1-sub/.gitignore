@@ -1,0 +1,5 @@
+*.pyc
+*.log
+*.sw*
+test
+dump

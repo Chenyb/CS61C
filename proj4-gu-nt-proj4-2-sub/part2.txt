@@ -1,0 +1,42 @@
+* Note that an ec2.x8large instance costs $1.680 / hour.
+
+1. Fill in the table from 5 slaves.
+Benchmark      | # of Images | Total Runtime(min) | Training Performance(imgs/sec) | $ / 50000 imgs
+----------------------------------------------------------------------------------------------------
+ec2-cnn-large  |    8000     |  16.79             |     26.8                       |    4.353
+ec2-cnn-huge   |   20000     |  33.40             |     31.42                      |    3.713
+ec2-cnn-full   |   50000     |  140.29            |     18.19                      |    6.414
+
+2. Fill in the table from 10 slaves.
+Benchmark      | # of Images | Total Runtime(min) | Training Performance(imgs/sec) | $ / 50000 imgs
+----------------------------------------------------------------------------------------------------
+ec2-cnn-large  |    8000     |  11.62             |     39.51                      |    5.906
+ec2-cnn-huge   |   20000     |  20.31             |     53.87                      |    4.331
+ec2-cnn-full   |   50000     |  46.90             |     54.83                      |    4.256
+
+3. What is the speed-up of 10 slaves over 5 slaves? What can you conclude on the data size and parallelism? 
+Is this a case of strong scaling or weak scaling?
+Benchmark      | # of Images |      speed-up      |
+---------------------------------------------------
+ec2-cnn-large  |    8000     |     1.474          |                         
+ec2-cnn-huge   |   20000     |     1.715          |                         
+ec2-cnn-full   |   50000     |     3.014          |                         
+
+As the data size increases, the speed-up of increasing the number of instances gets larger.
+Since for fixed data sizes in three cases, 10 slaves will be faster than 5 slaves, it is a strong scaling case. 
+
+
+4. How many dollars in EC2 credits did you use to complete this project?
+   5-slaves-credit: ec2-cnn-large: (16.79/60) * 1.68 * 5
+                    ec2-cnn-huge: (33.40/60) * 1.68 * 5
+		    ec2-cnn-full: (140.29/60) * 1.68 * 5
+
+   10-slaves-credit :ec2-cnn-large:(11.62/60) * 1.68 * 10
+		     ec2-cnn-huge:(20.31/60) * 1.68 * 10
+		     ec2-cnn-full:(46.90/60) * 1.68 * 10
+ (8000/39.51 + 20000/53.87 + 50000/54.83) * 10 * 1.6 /3600
+                     = 6.602907012143967
+ 
+   Total-credit = (16.79/60) * 1.68 * 5 + (33.40/60) * 1.68 * 5 + (140.29/60) * 1.68 * 5
+		 + (11.62/60) * 1.68 * 10 + (20.31/60) * 1.68 * 10+(46.90/60) * 1.68 * 10
+		= 48.74 dollar

@@ -1,0 +1,57 @@
+NAME: Yibing Chen
+LOGIN: cs61c-nt
+
+Problem 1
+
+UNSIGNED
+Decimal |   Binary        | Hexadecimal| 
+========================================
+  10    |   0b0000 1010   |   0x0A   |
+  240   |   0b1111 0000   |   0xF0   |
+  15    |   0b0000 1111   |   0x0F   |
+  161   |   0b1010 0001   |   0xA1   |
+  250   |   0b1111 1010   |   0xFA   |
+  255   |   0b1111 1111   |   0xFF   |
+  204   |   0b0100 1100   |   0xCC   |
+  -35   |   n/a           |   n/a    |
+  128   |   0b1000 0000   |   0x80   |
+  105   |   0b0110 1001   |   0x69   |
+
+TWO'S COMPLEMENT
+Decimal |   Binary        | Hexadecimal| 
+========================================
+ -10    |   0b1111 0110   |   0xF6   |
+ -16    |   0b1111 0000   |   0xF0   |
+  15    |   0b0000 1111   |   0x0F   |
+ -95    |   0b1010 0001   |   0xA1   |
+  250   |   n/a           |   n/a    |
+ -1     |   0b1111 1111   |   0xFF   |
+ -52    |   0b1100 1100   |   0xCC   |
+  -35   |   0b1101 1101   |   0xDD   |
+  128   |   n/a           |   n/a    |
+  105   |   0b0110 1001   |   0x69   |
+
+Problem 2
+
+a.
+1. CHOICE: two’s complement
+   EXPLANATION: degrees in Celsius have negative value which cannot
+		use unsigned number to express
+2. CHOICE: both
+   EXPLANATION: both type can contain 256 numbers
+3. CHOICE: unsigned
+   EXPLANATION:  unsigned can express more number in positive range
+
+
+Problem 3
+a. 4 ^ n
+b. 2 ^ (n - 1)
+c. 1
+d. 2 ^ n -1
+
+Problem 4
+Example: 3, CORRECT
+a. 128, OVERFLOW
+b. -97, CORRECT
+c. -128, CORRECT
+d. -2, CORRECT
